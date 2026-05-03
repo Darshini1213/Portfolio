@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Venkata Darshini — CSE Student, Full Stack Developer & Aspiring ML Engineer" />
+  <title>Venkata Darshini | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-logo">VD<span>.</span></div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger"><i class="fas fa-bars"></i></button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#home" onclick="closeMenu()">Home</a>
+    <a href="#about" onclick="closeMenu()">About</a>
+    <a href="#skills" onclick="closeMenu()">Skills</a>
+    <a href="#projects" onclick="closeMenu()">Projects</a>
+    <a href="#contact" onclick="closeMenu()">Contact</a>
+  </div>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <p class="greeting">Hi, I'm</p>
+      <h1>Venkata Darshini</h1>
+      <p class="role"><span id="typed"></span><span class="cursor-blink">|</span></p>
+      <p class="tagline">Building AI-driven applications and scalable web solutions</p>
+      <div class="hero-btns">
+        <a href="#projects" class="btn-primary">View Projects</a>
+        <a href="#contact" class="btn-outline">Contact Me</a>
+      </div>
+      <div class="socials">
+        <a href="https://github.com/Darshini1213" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/venkata-darshini" target="_blank" aria-label="LinkedIn"><i
+            class="fab fa-linkedin-in"></i></a>
+        <a href="mailto:venkatadarshini@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+    <div class="hero-avatar">
+      <div class="terminal-window">
+        <div class="terminal-bar">
+          <span class="t-dot t-red"></span>
+          <span class="t-dot t-yellow"></span>
+          <span class="t-dot t-green"></span>
+          <span class="t-title">venkata.js</span>
+        </div>
+        <div class="terminal-body">
+          <pre id="terminal-code"></pre>
+          <span class="term-cursor">█</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2 class="section-title">About <span>Me</span></h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>I am a <strong>Computer Science student</strong> at Mohan Babu University (Graduating 2027), passionate
+            about building real-world applications using full-stack development and AI.</p>
+          <p>I enjoy solving problems through technology and aim to grow as a <strong>Machine Learning
+              Engineer</strong>, contributing to impactful and scalable solutions.</p>
+          <div class="about-meta">
+            <span><i class="fas fa-graduation-cap"></i> Mohan Babu University, 2027</span>
+            <span><i class="fas fa-envelope"></i> venkatadarshini@gmail.com</span>
+          </div>
+        </div>
+        <div class="achievements">
+          <h3>Achievements</h3>
+          <ul class="achievement-list">
+            <li><i class="fab fa-google"></i> Google STEP Program — Band Score 10</li>
+            <li><i class="fas fa-briefcase"></i> Infosys Pragati — Cohort 3</li>
+            <li><i class="fas fa-users"></i> NSS Core Coordinator</li>
+            <li><i class="fas fa-laptop-code"></i> National Hackathons: SYNAPSE, MIND SPRINT</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section alt">
+    <div class="container">
+      <h2 class="section-title">Technical <span>Skills</span></h2>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h4><i class="fas fa-terminal"></i> Languages</h4>
+          <div class="tags"><span>JavaScript</span><span>Java</span><span>Python</span><span>C</span></div>
+        </div>
+        <div class="skill-card">
+          <h4><i class="fas fa-desktop"></i> Frontend</h4>
+          <div class="tags"><span>React.js</span><span>HTML5</span><span>CSS3</span></div>
+        </div>
+        <div class="skill-card">
+          <h4><i class="fas fa-server"></i> Backend</h4>
+          <div class="tags"><span>Node.js</span><span>Express.js</span><span>REST APIs</span></div>
+        </div>
+        <div class="skill-card">
+          <h4><i class="fas fa-database"></i> Databases</h4>
+          <div class="tags"><span>MySQL</span><span>MongoDB</span></div>
+        </div>
+        <div class="skill-card">
+          <h4><i class="fas fa-tools"></i> Tools</h4>
+          <div class="tags"><span>Git</span><span>GitHub</span><span>Postman</span><span>VS Code</span></div>
+        </div>
+        <div class="skill-card">
+          <h4><i class="fas fa-lightbulb"></i> Concepts</h4>
+          <div class="tags"><span>DBMS</span><span>OOP</span><span>OS</span><span>REST APIs</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section">
+    <div class="container">
+      <h2 class="section-title">My <span>Projects</span></h2>
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <div class="project-top">
+            <i class="fas fa-graduation-cap project-icon"></i>
+            <a href="https://edvora-lms-uz2l.onrender.com/" target="_blank" class="project-live"><i
+                class="fas fa-external-link-alt"></i></a>
+          </div>
+          <h3>EDVORA</h3>
+          <p class="project-sub">Learning Management System</p>
+          <p class="project-desc">Full-stack LMS with role-based authentication and admin dashboards. Improved admin
+            efficiency by <strong>25%</strong>.</p>
+          <div class="tech-tags"><span>Node.js</span><span>Express.js</span><span>MongoDB</span></div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-top">
+            <i class="fas fa-brain project-icon"></i>
+            <a href="https://mindgrid-three.vercel.app/" target="_blank" class="project-live"><i
+                class="fas fa-external-link-alt"></i></a>
+          </div>
+          <h3>MindGrid</h3>
+          <p class="project-sub">AI Productivity Platform</p>
+          <p class="project-desc">Productivity tool with AI-based document processing and task management, secured with
+            JWT authentication.</p>
+          <div class="tech-tags"><span>React.js</span><span>Node.js</span><span>MongoDB</span><span>AI APIs</span></div>
+        </div>
+
+        <div class="project-card upcoming">
+          <div class="project-top">
+            <i class="fas fa-robot project-icon"></i>
+            <span class="badge-wip">In Progress</span>
+          </div>
+          <h3>NxtBuild</h3>
+          <p class="project-sub">AI-Powered Web App Builder</p>
+          <p class="project-desc">Generates full-stack web apps from natural language prompts using Gemini AI.</p>
+          <div class="tech-tags"><span>React.js</span><span>Node.js</span><span>MongoDB</span><span>Gemini AI</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section alt">
+    <div class="container">
+      <h2 class="section-title">Get In <span>Touch</span></h2>
+      <p class="contact-intro">I'm open to internship opportunities, freelance projects, and collaborations. Feel free
+        to reach out!</p>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <a href="mailto:venkatadarshini@gmail.com" class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <div><strong>Email</strong><span>venkatadarshini@gmail.com</span></div>
+          </a>
+          <a href="https://linkedin.com/in/venkata-darshini" target="_blank" class="contact-item">
+            <i class="fab fa-linkedin-in"></i>
+            <div><strong>LinkedIn</strong><span>venkata-darshini</span></div>
+          </a>
+          <a href="https://github.com/Darshini1213" target="_blank" class="contact-item">
+            <i class="fab fa-github"></i>
+            <div><strong>GitHub</strong><span>Darshini1213</span></div>
+          </a>
+        </div>
+        <form id="contact-form" class="contact-form">
+          <input type="text" id="f-name" placeholder="Your Name" required />
+          <input type="email" id="f-email" placeholder="Your Email" required />
+          <input type="text" id="f-subject" placeholder="Subject" />
+          <textarea id="f-message" rows="5" placeholder="Your Message" required></textarea>
+          <button type="submit" class="btn-primary full">Send Message <i class="fas fa-paper-plane"></i></button>
+          <p id="form-msg" class="form-msg"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Venkata Darshini · Designed & Built with <i class="fas fa-heart"></i></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
