@@ -7,216 +7,400 @@
   <meta name="description" content="Venkata Darshini — CSE Student, Full Stack Developer & Aspiring ML Engineer" />
   <title>Venkata Darshini | Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
+  <script>
+    (function () {
+      var t = localStorage.getItem("theme");
+      if (t === "light") document.documentElement.setAttribute("data-theme", "light");
+    })();
+  </script>
 </head>
 
 <body>
-
-  <!-- NAV -->
-  <nav id="navbar">
-    <div class="nav-logo">VD<span>.</span></div>
-    <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <button class="hamburger" id="hamburger"><i class="fas fa-bars"></i></button>
-  </nav>
-
-  <!-- MOBILE MENU -->
-  <div class="mobile-menu" id="mobile-menu">
-    <a href="#home" onclick="closeMenu()">Home</a>
-    <a href="#about" onclick="closeMenu()">About</a>
-    <a href="#skills" onclick="closeMenu()">Skills</a>
-    <a href="#projects" onclick="closeMenu()">Projects</a>
-    <a href="#contact" onclick="closeMenu()">Contact</a>
+  <div class="page-loader" id="page-loader" aria-hidden="true">
+    <div class="loader-content">
+      <span class="loader-brand">VD</span>
+      <div class="loader-track"><span class="loader-fill" id="loader-fill"></span></div>
+      <span class="loader-caption">Loading experience</span>
+    </div>
   </div>
 
-  <!-- HERO -->
-  <section id="home" class="hero">
-    <div class="hero-content">
-      <p class="greeting">Hi, I'm</p>
-      <h1>Venkata Darshini</h1>
-      <p class="role"><span id="typed"></span><span class="cursor-blink">|</span></p>
-      <p class="tagline">Building AI-driven applications and scalable web solutions</p>
-      <div class="hero-btns">
-        <a href="#projects" class="btn-primary">View Projects</a>
-        <a href="#contact" class="btn-outline">Contact Me</a>
-      </div>
-      <div class="socials">
-        <a href="https://github.com/Darshini1213" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-        <a href="https://linkedin.com/in/venkata-darshini" target="_blank" aria-label="LinkedIn"><i
-            class="fab fa-linkedin-in"></i></a>
-        <a href="mailto:venkatadarshini@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
+  <div class="bg-mesh" aria-hidden="true">
+    <span class="mesh-blob mesh-blob-1"></span>
+    <span class="mesh-blob mesh-blob-2"></span>
+  </div>
+  <div class="grid-overlay" aria-hidden="true"></div>
+  <div class="noise-overlay" aria-hidden="true"></div>
+
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <nav id="navbar" class="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">VD<span>.</span></a>
+
+      <ul class="nav-links">
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#work" class="nav-link">Work</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-controls">
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle light and dark mode">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </button>
+        <button class="hamburger" id="hamburger" type="button" aria-label="Open menu">
+          <i class="fas fa-bars" aria-hidden="true"></i>
+        </button>
       </div>
     </div>
-    <div class="hero-avatar">
-      <div class="terminal-window">
-        <div class="terminal-bar">
-          <span class="t-dot t-red"></span>
-          <span class="t-dot t-yellow"></span>
-          <span class="t-dot t-green"></span>
-          <span class="t-title">venkata.js</span>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="#home" onclick="closeMenu()">Home</a></li>
+      <li><a href="#about" onclick="closeMenu()">About</a></li>
+      <li><a href="#work" onclick="closeMenu()">Work</a></li>
+      <li><a href="#skills" onclick="closeMenu()">Skills</a></li>
+      <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+    </ul>
+  </div>
+
+  <section id="home" class="hero">
+    <div class="hero-orbs" aria-hidden="true">
+      <span class="orb orb-1"></span>
+      <span class="orb orb-2"></span>
+      <span class="orb orb-3"></span>
+    </div>
+    <div class="hero-wrapper">
+      <div class="hero-content">
+        <div class="hero-label">Portfolio · 2026</div>
+        <h1 class="hero-title">
+          <span class="hero-word" data-split>Venkata</span>
+          <span class="hero-word accent" data-split>Darshini</span>
+        </h1>
+        <p class="hero-subtitle">Full Stack Developer &amp; ML Engineer building intelligent, scalable products with clean code and thoughtful design.</p>
+
+        <div class="hero-roles">
+          <span class="role-badge"><span id="role-text">Building AI Solutions</span></span>
         </div>
-        <div class="terminal-body">
-          <pre id="terminal-code"></pre>
-          <span class="term-cursor">█</span>
+
+        <div class="hero-cta">
+          <a href="#work" class="btn-primary magnetic">
+            <span>Explore My Work</span>
+            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+          </a>
+          <a href="#contact" class="btn-secondary magnetic">
+            <span>Get in Touch</span>
+          </a>
         </div>
+
+        <div class="hero-socials">
+          <a href="https://github.com/Darshini1213" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <i class="fab fa-github" aria-hidden="true"></i>
+          </a>
+          <a href="https://linkedin.com/in/venkata-darshini" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <i class="fab fa-linkedin" aria-hidden="true"></i>
+          </a>
+          <a href="mailto:venkatadarshini@gmail.com" class="social-link" aria-label="Email">
+            <i class="fas fa-envelope" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="code-card">
+          <div class="code-header">
+            <span class="code-dot red"></span>
+            <span class="code-dot yellow"></span>
+            <span class="code-dot green"></span>
+            <span class="code-label">venkata.js</span>
+          </div>
+          <pre id="code-output"></pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll">
+      <div class="scroll-indicator">
+        <div class="scroll-mouse" aria-hidden="true"></div>
+        <span>Scroll to explore</span>
       </div>
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section id="about" class="section">
-    <div class="container">
-      <h2 class="section-title">About <span>Me</span></h2>
+  <section id="about" class="section about-section">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-num">01</span>
+        <span class="section-tag">About</span>
+        <h2>Who I Am</h2>
+        <div class="header-line"></div>
+      </div>
+
       <div class="about-grid">
         <div class="about-text">
-          <p>I am a <strong>Computer Science student</strong> at Mohan Babu University (Graduating 2027), passionate
-            about building real-world applications using full-stack development and AI.</p>
-          <p>I enjoy solving problems through technology and aim to grow as a <strong>Machine Learning
-              Engineer</strong>, contributing to impactful and scalable solutions.</p>
-          <div class="about-meta">
-            <span><i class="fas fa-graduation-cap"></i> Mohan Babu University, 2027</span>
-            <span><i class="fas fa-envelope"></i> venkatadarshini@gmail.com</span>
+          <p>I'm a <strong>Computer Science student</strong> at Mohan Babu University (graduating 2027) focused on full-stack development and machine learning.</p>
+          <p>I combine strong engineering fundamentals with creative problem-solving to ship products that are fast, reliable, and user-centered.</p>
+
+          <div class="about-stats">
+            <div class="stat-card">
+              <div class="stat-number" data-count="3" data-suffix="+">0</div>
+              <div class="stat-label">Major Projects</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number" data-count="10">0</div>
+              <div class="stat-label">Google STEP Score</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number" data-count="2027">0</div>
+              <div class="stat-label">Graduation</div>
+            </div>
           </div>
         </div>
-        <div class="achievements">
-          <h3>Achievements</h3>
-          <ul class="achievement-list">
-            <li><i class="fab fa-google"></i> Google STEP Program — Band Score 10</li>
-            <li><i class="fas fa-briefcase"></i> Infosys Pragati — Cohort 3</li>
-            <li><i class="fas fa-users"></i> NSS Core Coordinator</li>
-            <li><i class="fas fa-laptop-code"></i> National Hackathons: SYNAPSE, MIND SPRINT</li>
-          </ul>
+
+        <div class="about-highlights">
+          <div class="highlight-card">
+            <h3>Education</h3>
+            <p><strong>Mohan Babu University</strong> — B.Tech Computer Science</p>
+            <p class="detail">Expected graduation 2027</p>
+          </div>
+          <div class="highlight-card">
+            <h3>Highlights</h3>
+            <ul>
+              <li>Google STEP Program — Band Score 10</li>
+              <li>Infosys Pragati — Cohort 3</li>
+              <li>NSS Core Coordinator</li>
+              <li>National Hackathon Winner</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SKILLS -->
-  <section id="skills" class="section alt">
-    <div class="container">
-      <h2 class="section-title">Technical <span>Skills</span></h2>
-      <div class="skills-grid">
-        <div class="skill-card">
-          <h4><i class="fas fa-terminal"></i> Languages</h4>
-          <div class="tags"><span>JavaScript</span><span>Java</span><span>Python</span><span>C</span></div>
+  <section id="work" class="section work-section">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-num">02</span>
+        <span class="section-tag">Portfolio</span>
+        <h2>Featured Work</h2>
+        <div class="header-line"></div>
+      </div>
+
+      <div class="work-grid">
+        <article class="work-card tilt-card">
+          <div class="card-shine" aria-hidden="true"></div>
+          <div class="work-image">
+            <div class="work-placeholder" aria-hidden="true">📚</div>
+          </div>
+          <div class="work-content">
+            <h3>EDVORA</h3>
+            <p class="work-type">Learning Management System</p>
+            <p class="work-desc">Full-stack LMS with role-based auth, admin dashboards, and student management — improving admin efficiency by 25%.</p>
+            <div class="work-tech">
+              <span>Node.js</span>
+              <span>Express.js</span>
+              <span>MongoDB</span>
+              <span>React</span>
+            </div>
+            <a href="https://edvora-lms-uz2l.onrender.com/" class="work-link" target="_blank" rel="noopener noreferrer">
+              View Project <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </article>
+
+        <article class="work-card tilt-card">
+          <div class="card-shine" aria-hidden="true"></div>
+          <div class="work-image">
+            <div class="work-placeholder" aria-hidden="true">🧠</div>
+          </div>
+          <div class="work-content">
+            <h3>MindGrid</h3>
+            <p class="work-type">AI Productivity Platform</p>
+            <p class="work-desc">AI document processing, smart task management, and JWT-secured workflows for teams and individuals.</p>
+            <div class="work-tech">
+              <span>React.js</span>
+              <span>Node.js</span>
+              <span>MongoDB</span>
+              <span>AI APIs</span>
+            </div>
+            <a href="https://mindgrid-three.vercel.app/" class="work-link" target="_blank" rel="noopener noreferrer">
+              View Project <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </article>
+
+        <article class="work-card tilt-card">
+          <div class="card-shine" aria-hidden="true"></div>
+          <div class="work-image">
+            <div class="work-placeholder" aria-hidden="true">🤖</div>
+          </div>
+          <div class="work-content">
+            <h3>NxtBuild</h3>
+            <p class="work-type">AI Web App Builder</p>
+            <p class="work-desc">Generate full-stack applications from natural language using Gemini AI — from prompt to deployable code.</p>
+            <div class="work-tech">
+              <span>React.js</span>
+              <span>Node.js</span>
+              <span>Gemini AI</span>
+              <span>MongoDB</span>
+            </div>
+            <a href="https://ai-powered-web-app-builder-v6am.vercel.app/" class="work-link" target="_blank" rel="noopener noreferrer">
+              View Project <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="section skills-section">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-num">03</span>
+        <span class="section-tag">Expertise</span>
+        <h2>Technical Skills</h2>
+        <div class="header-line"></div>
+      </div>
+
+      <div class="skills-container">
+        <div class="skill-group">
+          <h4>Languages</h4>
+          <div class="skill-list">
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Java</span>
+            <span class="skill-tag">C</span>
+          </div>
         </div>
-        <div class="skill-card">
-          <h4><i class="fas fa-desktop"></i> Frontend</h4>
-          <div class="tags"><span>React.js</span><span>HTML5</span><span>CSS3</span></div>
+        <div class="skill-group">
+          <h4>Frontend</h4>
+          <div class="skill-list">
+            <span class="skill-tag">React.js</span>
+            <span class="skill-tag">HTML5</span>
+            <span class="skill-tag">CSS3</span>
+            <span class="skill-tag">GSAP</span>
+          </div>
         </div>
-        <div class="skill-card">
-          <h4><i class="fas fa-server"></i> Backend</h4>
-          <div class="tags"><span>Node.js</span><span>Express.js</span><span>REST APIs</span></div>
+        <div class="skill-group">
+          <h4>Backend</h4>
+          <div class="skill-list">
+            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">Express.js</span>
+            <span class="skill-tag">REST APIs</span>
+            <span class="skill-tag">JWT</span>
+          </div>
         </div>
-        <div class="skill-card">
-          <h4><i class="fas fa-database"></i> Databases</h4>
-          <div class="tags"><span>MySQL</span><span>MongoDB</span></div>
+        <div class="skill-group">
+          <h4>Databases &amp; Tools</h4>
+          <div class="skill-list">
+            <span class="skill-tag">MongoDB</span>
+            <span class="skill-tag">MySQL</span>
+            <span class="skill-tag">Git / GitHub</span>
+            <span class="skill-tag">VS Code</span>
+          </div>
         </div>
-        <div class="skill-card">
-          <h4><i class="fas fa-tools"></i> Tools</h4>
-          <div class="tags"><span>Git</span><span>GitHub</span><span>Postman</span><span>VS Code</span></div>
+        <div class="skill-group">
+          <h4>ML &amp; AI</h4>
+          <div class="skill-list">
+            <span class="skill-tag">Machine Learning</span>
+            <span class="skill-tag">AI APIs</span>
+            <span class="skill-tag">NLP</span>
+            <span class="skill-tag">Computer Vision</span>
+          </div>
         </div>
-        <div class="skill-card">
-          <h4><i class="fas fa-lightbulb"></i> Concepts</h4>
-          <div class="tags"><span>DBMS</span><span>OOP</span><span>OS</span><span>REST APIs</span></div>
+        <div class="skill-group">
+          <h4>Core Concepts</h4>
+          <div class="skill-list">
+            <span class="skill-tag">DBMS</span>
+            <span class="skill-tag">OOP</span>
+            <span class="skill-tag">DSA</span>
+            <span class="skill-tag">System Design</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PROJECTS -->
-  <section id="projects" class="section">
-    <div class="container">
-      <h2 class="section-title">My <span>Projects</span></h2>
-      <div class="projects-grid">
-
-        <div class="project-card">
-          <div class="project-top">
-            <i class="fas fa-graduation-cap project-icon"></i>
-            <a href="https://edvora-lms-uz2l.onrender.com/" target="_blank" class="project-live"><i
-                class="fas fa-external-link-alt"></i></a>
-          </div>
-          <h3>EDVORA</h3>
-          <p class="project-sub">Learning Management System</p>
-          <p class="project-desc">Full-stack LMS with role-based authentication and admin dashboards. Improved admin
-            efficiency by <strong>25%</strong>.</p>
-          <div class="tech-tags"><span>Node.js</span><span>Express.js</span><span>MongoDB</span></div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-top">
-            <i class="fas fa-brain project-icon"></i>
-            <a href="https://mindgrid-three.vercel.app/" target="_blank" class="project-live"><i
-                class="fas fa-external-link-alt"></i></a>
-          </div>
-          <h3>MindGrid</h3>
-          <p class="project-sub">AI Productivity Platform</p>
-          <p class="project-desc">Productivity tool with AI-based document processing and task management, secured with
-            JWT authentication.</p>
-          <div class="tech-tags"><span>React.js</span><span>Node.js</span><span>MongoDB</span><span>AI APIs</span></div>
-        </div>
-
-        <div class="project-card upcoming">
-          <div class="project-top">
-            <i class="fas fa-robot project-icon"></i>
-            <span class="badge-wip">In Progress</span>
-          </div>
-          <h3>NxtBuild</h3>
-          <p class="project-sub">AI-Powered Web App Builder</p>
-          <p class="project-desc">Generates full-stack web apps from natural language prompts using Gemini AI.</p>
-          <div class="tech-tags"><span>React.js</span><span>Node.js</span><span>MongoDB</span><span>Gemini AI</span>
-          </div>
-        </div>
-
+  <section id="contact" class="section contact-section">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-num">04</span>
+        <span class="section-tag">Contact</span>
+        <h2>Let's Connect</h2>
+        <div class="header-line"></div>
+        <p class="header-subtitle">Open to internships, collaborations, and interesting projects.</p>
       </div>
-    </div>
-  </section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="section alt">
-    <div class="container">
-      <h2 class="section-title">Get In <span>Touch</span></h2>
-      <p class="contact-intro">I'm open to internship opportunities, freelance projects, and collaborations. Feel free
-        to reach out!</p>
-      <div class="contact-grid">
-        <div class="contact-info">
-          <a href="mailto:venkatadarshini@gmail.com" class="contact-item">
-            <i class="fas fa-envelope"></i>
-            <div><strong>Email</strong><span>venkatadarshini@gmail.com</span></div>
+      <div class="contact-wrapper">
+        <div class="contact-links">
+          <a href="mailto:venkatadarshini@gmail.com" class="contact-link">
+            <div class="contact-icon"><i class="fas fa-envelope" aria-hidden="true"></i></div>
+            <div>
+              <p class="contact-label">Email</p>
+              <p class="contact-value">venkatadarshini@gmail.com</p>
+            </div>
+            <i class="fas fa-arrow-right" aria-hidden="true"></i>
           </a>
-          <a href="https://linkedin.com/in/venkata-darshini" target="_blank" class="contact-item">
-            <i class="fab fa-linkedin-in"></i>
-            <div><strong>LinkedIn</strong><span>venkata-darshini</span></div>
+          <a href="https://linkedin.com/in/venkata-darshini" class="contact-link" target="_blank" rel="noopener noreferrer">
+            <div class="contact-icon"><i class="fab fa-linkedin" aria-hidden="true"></i></div>
+            <div>
+              <p class="contact-label">LinkedIn</p>
+              <p class="contact-value">venkata-darshini</p>
+            </div>
+            <i class="fas fa-arrow-right" aria-hidden="true"></i>
           </a>
-          <a href="https://github.com/Darshini1213" target="_blank" class="contact-item">
-            <i class="fab fa-github"></i>
-            <div><strong>GitHub</strong><span>Darshini1213</span></div>
+          <a href="https://github.com/Darshini1213" class="contact-link" target="_blank" rel="noopener noreferrer">
+            <div class="contact-icon"><i class="fab fa-github" aria-hidden="true"></i></div>
+            <div>
+              <p class="contact-label">GitHub</p>
+              <p class="contact-value">Darshini1213</p>
+            </div>
+            <i class="fas fa-arrow-right" aria-hidden="true"></i>
           </a>
         </div>
+
         <form id="contact-form" class="contact-form">
-          <input type="text" id="f-name" placeholder="Your Name" required />
-          <input type="email" id="f-email" placeholder="Your Email" required />
-          <input type="text" id="f-subject" placeholder="Subject" />
-          <textarea id="f-message" rows="5" placeholder="Your Message" required></textarea>
-          <button type="submit" class="btn-primary full">Send Message <i class="fas fa-paper-plane"></i></button>
-          <p id="form-msg" class="form-msg"></p>
+          <div class="form-group">
+            <input type="text" id="form-name" placeholder="Your Name" required />
+            <span class="form-border"></span>
+          </div>
+          <div class="form-group">
+            <input type="email" id="form-email" placeholder="Your Email" required />
+            <span class="form-border"></span>
+          </div>
+          <div class="form-group">
+            <input type="text" id="form-subject" placeholder="Subject" />
+            <span class="form-border"></span>
+          </div>
+          <div class="form-group">
+            <textarea id="form-message" placeholder="Your Message" rows="5" required></textarea>
+            <span class="form-border"></span>
+          </div>
+          <button type="submit" class="btn-primary">
+            <span>Send Message</span>
+            <i class="fas fa-paper-plane" aria-hidden="true"></i>
+          </button>
+          <p id="form-response" class="form-response"></p>
         </form>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2026 Venkata Darshini · Designed & Built with <i class="fas fa-heart"></i></p>
+  <footer class="footer">
+    <p>© 2026 Venkata Darshini. Crafted with passion <i class="fas fa-heart" aria-hidden="true"></i></p>
   </footer>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="script.js"></script>
 </body>
 
